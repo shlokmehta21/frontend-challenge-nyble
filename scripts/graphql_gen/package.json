@@ -1,0 +1,19 @@
+{
+  "name": "graphql_gen",
+  "version": "1.0.0",
+  "description": "Graphql Codegen",
+  "main": "main.ts",
+  "author": "Fincentify Inc",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "gqlgen": "node --loader ts-node/esm ./main.ts"
+  },
+  "devDependencies": {
+    "ts-node": "^10.5.0"
+  },
+  "dependencies": {
+    "@types/node": "^17.0.19",
+    "typescript": "^4.5.5"
+  }
+}
