@@ -1,11 +1,10 @@
 {
   "name": "web",
   "version": "1.0.0",
-  "description": "Nyble Cash app web application.",
+  "description": "Nyble take-home exercise.",
   "scripts": {
-    "web:up": "yarn web:dev",
+    "start": "yarn web:dev",
     "web:dev": "webpack-dev-server --mode development --devtool inline-source-map --hot --display-error-details",
-    "build": "webpack --mode production",
     "gql:gen": "cd ./scripts/graphql_gen && yarn run gqlgen"
   },
   "author": "Fincentify inc. dba. Nyble",

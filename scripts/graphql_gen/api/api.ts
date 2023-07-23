@@ -8,7 +8,7 @@ class Api {
   }
 
   sendQuery = (query: string): Promise<Response> => {
-    return fetch('http://0.0.0.0:3000/api', {
+    return fetch('http://0.0.0.0:3000/fedd', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
