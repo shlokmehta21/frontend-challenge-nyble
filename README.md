@@ -15,7 +15,7 @@ We want to implement a figma design into a responsive web app.
 
 * From the moment you receive this challenge, you will have exactly __1 week__ to complete it. The challenge is designed to take a few hours to complete, so plan your time as you see fit.
 * You are allowed to use whatever references online __but__ your work must be yours alone, collaboration is not permitted.
-* Use this template repo to make a copy into your own **private** repo and add `han@nyble.com` (`hanburger97`) as a collaborator. 
+* Create a private repository using **this template** and add `han@nyble.com` (`hanburger97`) as a collaborator. 
 * Create a new branch using the naming format `thf-<YOUR LAST NAME>` in all lowercase, and write your implementation code on that branch.
 
 **Submission instructions**
