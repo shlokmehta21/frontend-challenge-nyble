@@ -40,6 +40,34 @@ const HomePage = () => {
     [TABS.WOOF_TAB]: <WoofTab />,
   };
 
+  // Tab Buttons content:
+  const tabButtons = [
+    {
+      Icon: AccountIcon,
+      text: "Account",
+      bgColor: theme.colours.primary.main,
+      onClick: () => switchTab(TABS.ACCOUNT_TAB),
+      currentTab: state.currTab,
+      isActive: state.currTab === TABS.ACCOUNT_TAB,
+    },
+    {
+      Icon: RewardsIcon,
+      text: "Rewards",
+      bgColor: theme.colours.secondary.main,
+      onClick: () => switchTab(TABS.REWARDS_TAB),
+      currentTab: state.currTab,
+      isActive: state.currTab === TABS.REWARDS_TAB,
+    },
+    {
+      Icon: WoofIcon,
+      text: "Woof",
+      bgColor: theme.colours.neutral.dark,
+      onClick: () => switchTab(TABS.WOOF_TAB),
+      currentTab: state.currTab,
+      isActive: state.currTab === TABS.WOOF_TAB,
+    },
+  ];
+
   return (
     <HomePageWrapper>
       <PageBackground>
@@ -62,30 +90,16 @@ const HomePage = () => {
           padding="0"
           maxHeight="15%"
         >
-          <TabButton
-            Icon={AccountIcon}
-            text="Account"
-            bgColor={theme.colours.primary.main}
-            onClick={() => switchTab(TABS.ACCOUNT_TAB)}
-            currentTab={state.currTab}
-            isActive={state.currTab === TABS.ACCOUNT_TAB}
-          />
-          <TabButton
-            Icon={RewardsIcon}
-            text="Rewards"
-            bgColor={theme.colours.secondary.main}
-            onClick={() => switchTab(TABS.REWARDS_TAB)}
-            currentTab={state.currTab}
-            isActive={state.currTab === TABS.REWARDS_TAB}
-          />
-          <TabButton
-            Icon={WoofIcon}
-            text="Woof"
-            bgColor={theme.colours.neutral.dark}
-            onClick={() => switchTab(TABS.WOOF_TAB)}
-            currentTab={state.currTab}
-            isActive={state.currTab === TABS.WOOF_TAB}
-          />
+          {tabButtons.map((tabButton) => (
+            <TabButton
+              Icon={tabButton.Icon}
+              text={tabButton.text}
+              bgColor={tabButton.bgColor}
+              onClick={tabButton.onClick}
+              currentTab={tabButton.currentTab}
+              isActive={tabButton.isActive}
+            />
+          ))}
         </Row>
 
         <HomePageTabWrapper>{tabs[state.currTab]}</HomePageTabWrapper>

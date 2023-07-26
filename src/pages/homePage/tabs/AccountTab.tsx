@@ -18,7 +18,7 @@ import { useWindowSize } from "utils/windowSize/useWindowSize";
 export type AccountTabProps = {};
 
 export const AccountTab = ({}: AccountTabProps) => {
-  const { data, loading, refetch } = useGetAccountQuery();
+  const { data, loading, refetch, error } = useGetAccountQuery();
   const [width] = useWindowSize();
   const account = data && data.getAccount.success ? data.getAccount.data : null;
 
@@ -35,6 +35,17 @@ export const AccountTab = ({}: AccountTabProps) => {
     return (
       <Column alignItems="center" justifyContent="center">
         <SpinnerWrapper />
+      </Column>
+    );
+  }
+
+  // If Error, show error message
+  if (error) {
+    return (
+      <Column alignItems="center" justifyContent="center">
+        <SmallText color={theme.colours.error}>
+          Oops! Something went wrong. Please try again later.
+        </SmallText>
       </Column>
     );
   }

@@ -16,7 +16,7 @@ import { useWindowSize } from "utils/windowSize/useWindowSize";
 export type RewardsTabProps = {};
 
 export const RewardsTab = ({}: RewardsTabProps) => {
-  const { data, loading, refetch } = useGetRewardsQuery();
+  const { data, loading, refetch, error } = useGetRewardsQuery();
   const rewards = data && data.getRewards.success ? data.getRewards.data : null;
   const [width] = useWindowSize();
 
@@ -25,6 +25,17 @@ export const RewardsTab = ({}: RewardsTabProps) => {
     return (
       <Column alignItems="center" justifyContent="center">
         <SpinnerWrapper />
+      </Column>
+    );
+  }
+
+  // If Error, show error message
+  if (error) {
+    return (
+      <Column alignItems="center" justifyContent="center">
+        <SmallText color={theme.colours.error}>
+          Oops! Something went wrong. Please try again later.
+        </SmallText>
       </Column>
     );
   }
