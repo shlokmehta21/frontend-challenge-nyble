@@ -92,6 +92,7 @@ const HomePage = () => {
         >
           {tabButtons.map((tabButton) => (
             <TabButton
+              key={tabButton.text}
               Icon={tabButton.Icon}
               text={tabButton.text}
               bgColor={tabButton.bgColor}
