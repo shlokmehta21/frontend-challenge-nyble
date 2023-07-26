@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import breakpoint from 'styled-components-breakpoint';
+import styled from "styled-components";
+import breakpoint from "styled-components-breakpoint";
 
 export const NavbarWrapper = styled.div`
   display: flex;
@@ -15,26 +15,33 @@ export const NavbarWrapper = styled.div`
 export const NavbarInnerWrapper = styled.div`
   display: flex;
   flex-direction: row;
-  padding-top: 15px;
   justify-content: space-between;
+  align-items: center;
   width: 100%;
-  ${breakpoint('mobile')`
+  ${breakpoint("mobile")`
     max-width: 350px;
   `}
-  ${breakpoint('tablet')`
+  ${breakpoint("tablet")`
     max-width: 900px;
   `}
 `;
 
 export const NavbarLogoWrapper = styled.img`
-  height: 35px;
+  height: 60px;
   width: auto;
-`
+  ${breakpoint("mobile")`
+    height: 35px;
+  `}
+
+  ${breakpoint("tablet")`
+  height: 60px;
+  `}
+`;
 export const NavbarProfileWrapper = styled.img`
   height: 30px;
   width: 30px;
   border-radius: 30px;
-`
+`;
 export const NavbarProfilePill = styled.div`
   display: flex;
   flex-direction: row;
@@ -46,4 +53,4 @@ export const NavbarProfilePill = styled.div`
   min-width: 100px;
   border-radius: 50px;
   padding: 2px 25px 2px 5px;
-`
+`;
