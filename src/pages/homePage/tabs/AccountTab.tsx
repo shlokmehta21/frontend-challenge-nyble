@@ -11,7 +11,7 @@ import React from "react";
 import doggy_dollar from "images/doggy_dollar.png";
 import { ImageWrapper } from "../styles/HomePage";
 import theme from "GlobalTheme";
-import { TabBottomWrapper, TabTopWrapper } from "./styles/commonTabStyles";
+import { TabBottomWrapper, TabTopWrapper } from "./styles/Tab";
 import Button from "components/widget/button/Button";
 import { useWindowSize } from "utils/windowSize/useWindowSize";
 

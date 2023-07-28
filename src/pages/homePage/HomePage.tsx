@@ -8,9 +8,9 @@ import { AccountTab } from "./tabs/AccountTab";
 import { RewardsTab } from "./tabs/RewardsTab";
 import { WoofTab } from "./tabs/WoofTab";
 import TabButton from "components/widget/tabButton/TabButton";
-import AccountIcon from "components/svgicons/AccountIcon";
-import RewardsIcon from "components/svgicons/RewardsIcon";
-import WoofIcon from "components/svgicons/WoofIcon";
+import AccountIcon from "images/svgicons/AccountIcon";
+import RewardsIcon from "images/svgicons/RewardsIcon";
+import WoofIcon from "images/svgicons/WoofIcon";
 import { Row } from "components/styling/common";
 import theme from "GlobalTheme";
 import Button from "components/widget/button/Button";
@@ -23,7 +23,7 @@ const HomePage = () => {
   /**
    * @function switchTab: Switches the current tab to the tab passed in as a parameter (tab)
    *
-   * @param TABS.ACCOUNT_TAB/ TABS.REWARDS_TAB / TABS.WOOF_TAB
+   * @param /TABS.ACCOUNT_TAB/ TABS.REWARDS_TAB / TABS.WOOF_TAB
    */
   const switchTab = (tab: keyof typeof TABS) => {
     dispatch({

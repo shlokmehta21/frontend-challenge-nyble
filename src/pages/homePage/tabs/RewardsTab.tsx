@@ -6,7 +6,7 @@ import {
   VeryLargeText,
 } from "Mixins/Font";
 import React from "react";
-import { TabTopWrapper } from "./styles/commonTabStyles";
+import { TabTopWrapper } from "./styles/Tab";
 import { ImageWrapper } from "../styles/HomePage";
 import theme from "GlobalTheme";
 import doggy_bone from "images/bone.png";

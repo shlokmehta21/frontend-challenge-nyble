@@ -5,7 +5,7 @@ import theme from "GlobalTheme";
 import sendWoofMutation from "graphql/generated/mutations/woofMutation";
 import { LargeHeading, MediumHeading } from "Mixins/Font";
 import React, { useState } from "react";
-import { TabTopWrapper } from "./styles/commonTabStyles";
+import { TabTopWrapper } from "./styles/Tab";
 import { useWindowSize } from "utils/windowSize/useWindowSize";
 
 export type WoofTabProps = {};
@@ -26,10 +26,8 @@ export const WoofTab = ({}: WoofTabProps) => {
         openSuccessToast("Woofed!");
         // Set loading to false when done
         setLoading(false);
-        console.log(res);
       })
       .catch((err) => {
-        console.log(err);
         openErrorToast("Error during woof");
       });
   };
