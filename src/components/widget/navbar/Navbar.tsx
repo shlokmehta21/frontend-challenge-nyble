@@ -1,17 +1,22 @@
-import React, { useEffect, useState } from 'react';
-import { NavbarInnerWrapper, NavbarLogoWrapper, NavbarProfilePill, NavbarProfileWrapper, NavbarWrapper } from './styles/Navbar';
-import { useTheme } from 'styled-components';
-import { useHistory } from 'react-router';
+import React, { useEffect, useState } from "react";
+import {
+  NavbarInnerWrapper,
+  NavbarLogoWrapper,
+  NavbarProfilePill,
+  NavbarProfileWrapper,
+  NavbarWrapper,
+} from "./styles/Navbar";
+import { useTheme } from "styled-components";
+import { useHistory } from "react-router";
 
-import Logo from 'images/fedd_logo.png'
-import Doggy from 'images/doggy.png'
+import Logo from "images/fedd_logo.png";
+import Doggy from "images/doggy.png";
 
-import { SmallHeading } from 'mixins/Font';
+import { SmallHeading } from "Mixins/Font";
 
 type NavbarPropsType = {};
 
 const Navbar = ({}: NavbarPropsType) => {
-
   const theme = useTheme();
   const history = useHistory();
 
@@ -19,12 +24,9 @@ const Navbar = ({}: NavbarPropsType) => {
     <NavbarWrapper>
       <NavbarInnerWrapper>
         <NavbarLogoWrapper src={Logo} />
-        
         <NavbarProfilePill>
           <NavbarProfileWrapper src={Doggy} />
-          <SmallHeading textAlign='flex-start'>
-            Billy
-          </SmallHeading>
+          <SmallHeading textAlign="flex-start">Billy</SmallHeading>
         </NavbarProfilePill>
       </NavbarInnerWrapper>
     </NavbarWrapper>

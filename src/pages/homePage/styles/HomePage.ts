@@ -1,39 +1,50 @@
-
-import styled from 'styled-components';
-import breakpoint from 'styled-components-breakpoint';
-import { optional } from 'utils/styledComponents';
+import theme from "GlobalTheme";
+import {
+  ModalBorderRadius,
+  ScreenFormHorizontalPadding,
+  ScreenFormVerticalPadding,
+} from "Mixins/Style";
+import styled from "styled-components";
+import breakpoint from "styled-components-breakpoint";
 
 export const HomePageWrapper = styled.div`
-  flex: 1;
   flex-direction: column;
   height: 100%;
   align-items: center;
   align-content: center;
   justify-content: flex-start;
+  height: 100vh;
 `;
 
 export const HomePageTabWrapper = styled.div<{
-  someOption?: string
-  // You can add options here
+  someOption?: string;
 }>`
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  background: ${({theme}) => theme.colours.white};
-  border-radius: 10px;
-  min-height: 60%;
+  background: ${({ theme }) => theme.colours.white};
+  border-radius: 20px;
+  width: 100%;
+  min-height: 18rem;
 
-  ${breakpoint('mobile')`
-    width: 100%;
-    max-width: 350px;
-    padding: 24px 24px;
+  ${ScreenFormHorizontalPadding({ theme })};
+
+  ${ScreenFormVerticalPadding({ theme })};
+
+  ${ModalBorderRadius}
+`;
+
+export const ImageWrapper = styled.img<{}>`
+  height: 100px;
+  width: 100px;
+
+  ${breakpoint("mobile")`
+      height: 75px;
+      width: 75px;
   `}
 
-  ${breakpoint('tablet')`
-    width: 100%;
-    max-width: 900px;
-    padding: 48px 24px;
+  ${breakpoint("tablet")`
+    height: 100px;
+    width: 100px;
   `}
-
-`
+`;

@@ -18,7 +18,7 @@ This folder is split into 6 subfolders. The addition of any new subfolders must 
 
 - To add a modal, make the content and follow the example in [ModalRegistry.tsx](../src/components/modal/modalRegistry.tsx)
 
-- Note that all modal content are provided with the `onRequestClose` prop to close the modal. 
+- Note that all modal content are provided with the `onRequestClose` prop to close the modal.
 
 - You can also pass a prop called `onAfterClose` to `openModal` that will run after the modal closes.
 - Note that functions passed to `onAfterClose` will suffer from stale variables - if a state change occurs after the function is passed, it will not register that change
@@ -31,7 +31,6 @@ This folder is split into 6 subfolders. The addition of any new subfolders must 
 ### Input
 
 > Components that provide input to the frontend
-
 
 ### Position
 
@@ -94,7 +93,7 @@ See [apollo process](#Automatically-Handled-Things) for details on how we handle
 
 ### Styled Components
 
-- Generally for components we have some styled component "wrapper" that wraps the entire component. Name these `<componentName>Wrapper`. 
+- Generally for components we have some styled component "wrapper" that wraps the entire component. Name these `<componentName>Wrapper`.
 
 ### Forms & Screens
 
@@ -105,7 +104,7 @@ See [apollo process](#Automatically-Handled-Things) for details on how we handle
 
 **Files and variables in the graphql layer follow an extremely specific naming convention**
 
-- We define a `<Client Query Name>` for each query. 
+- We define a `<Client Query Name>` for each query.
   - This name should summarize the intent of the query
   - This name doesn't need to be the same as the query name defined by the backend api
     - We like to be very descriptive with our naming, and this may be different from the query names the backend is using
@@ -114,13 +113,14 @@ See [apollo process](#Automatically-Handled-Things) for details on how we handle
 ##### Naming
 
 Each query should have:
+
 - A file dedicated to it, named `<Client Query Name>.ts`
 - An interface for its input type, named `<Client Query Name>Input`
 - A variable holding the gql query itself, named `<Client Query Name>Mutation`
 - A function for actually sending the query, name `send<Client Query Name>Mutation`
 - An interface for its response type, the response returned by the query sending function, named `<Client Query Name>Response`
 - If necessary, an interface for the type of data returned from the api, named
-`<Client Query Name>Data`
+  `<Client Query Name>Data`
 
 See any file under src/graphql/mutations for an example
 
@@ -135,7 +135,8 @@ See any file under src/graphql/mutations for an example
 ### Commonly Encountered Dev Things
 
 ##### Page Height, Scrolling, And IOS Edge Cases
-- See [Frontend Background](./FRONTEND_BACKGROUND#Node-Heights-(And-Widths),-Overflow,-Scrolling,-And-IOS-Edge-Cases)
+
+- See [Frontend Background](<./FRONTEND_BACKGROUND#Node-Heights-(And-Widths),-Overflow,-Scrolling,-And-IOS-Edge-Cases>)
 - We set the page height in App.tsx, so any subcomponent can use `HeightWithNavbar` in `Mixins/Position` to make a page take up the whole height of the screen
 
 ### Apollo
@@ -149,8 +150,8 @@ See any file under src/graphql/mutations for an example
 ##### Note on Errors
 
 - All network responses returned by the api server have code 200
-- Even errors have a network response code of 200, but the error code in the data will 
-reflect the actual error
+- Even errors have a network response code of 200, but the error code in the data will
+  reflect the actual error
 - The events that result in network responses having a code other than 200 are things on the level of CORS preflight blocks and invalid graphql syntax errors, which don't result in a response from the api server
 
 ### Auth
@@ -180,6 +181,7 @@ reflect the actual error
 - These occur when a user's token times out or is deleted
 - We don't proactively detect these so they won't trigger a state change
 - When a user hits an authenticated backend endpoint with an expired/nonexistent token, our `CustomApolloProvider` component handles everything
+
   1. We will recieve a 403 Unauthenticated error from the backend
   2. A toast saying "session expired" will be shown
   3. **No state change will be done yet**
@@ -192,10 +194,12 @@ reflect the actual error
 ### General Page Heuristics
 
 ##### Auth State
+
 - If a page should only be shown due to x criteria (x usually being auth state), this should be done at the App.tsx level
 - We like to be able to assume that, if we are at a page, then x criteria is satisfied
 
 ##### Rendering Screens
+
 - Be extremely careful when optionally rendering a page screen with something like "condition && screen"
   - This causes the screen to remount every time the condition changes
   - If the screen runs effects on mount, these effects will rerun

@@ -1,4 +1,4 @@
-import { DefaultTheme } from 'styled-components';
+import { DefaultTheme, keyframes } from "styled-components";
 
 export const SlidingUnderline = ({ theme }: { theme: DefaultTheme }) => `
   position: relative;
@@ -33,13 +33,23 @@ export const SlidingUnderline = ({ theme }: { theme: DefaultTheme }) => `
   }
 `;
 
-export const HoverTransition = (target = 'all', time = '0.1s') => `
+export const HoverTransition = (target = "all", time = "0.1s") => `
   transition: ${target} ${time} ease-in;
 `;
 
 export const Hover = (darker = false) => `
   ${HoverTransition()}
   &:hover, &:focus {
-    filter: brightness(${darker ? '60%' : '85%'});
+    filter: brightness(${darker ? "60%" : "85%"});
+  }
+`;
+
+// Fade in animation for tabs pages
+export const fadeInAnimation = keyframes`
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 `;

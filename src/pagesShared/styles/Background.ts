@@ -1,5 +1,5 @@
-import { PageWidth } from 'mixins/Position';
-import styled from 'styled-components';
+import { PageWidth } from "Mixins/Position";
+import styled from "styled-components";
 
 export const PageBackgroundWrapper = styled.div`
   display: flex;

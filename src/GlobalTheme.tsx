@@ -1,25 +1,26 @@
 const theme = {
   colours: {
     neutral: {
-      light: '#F8F9FA',
-      medium: '#EBEDF0',
-      dark: '#0F1B2D',
+      light: "#F8F9FA",
+      medium: "#EBEDF0",
+      dark: "#0F1B2D",
     },
     primary: {
-      light: '#E8F4CD',
-      main: '#CFE795',
-      dark: '#99C82D',
+      light: "#E8F4CD",
+      main: "#CFE795",
+      dark: "#99C82D",
     },
     secondary: {
-      light: '#E9C4D2',
-      main: '#CD7A9A',
-      dark: '#A13D63',
+      light: "#E9C4D2",
+      main: "#CD7A9A",
+      dark: "#A13D63",
     },
-    success: '#2DB573',
-    error: '#A23216',
-    warning: '#FDB34B',
-    black: '#000000',
-    white: '#FFFFFF',
+    success: "#2DB573",
+    error: "#A23216",
+    warning: "#FDB34B",
+    black: "#000000",
+    white: "#FFFFFF",
+    transparent: "transparent",
   },
   breakpoints: {
     mobile: 0,
@@ -48,14 +49,17 @@ const theme = {
   },
 };
 
-export const getForCurrentScreenSize = <T,>(obj: { [key: string]: T }, currWidth: number): T => {
+export const getForCurrentScreenSize = <T,>(
+  obj: { [key: string]: T },
+  currWidth: number
+): T => {
   if (currWidth < theme.breakpoints.tablet) {
-    return obj['mobile'];
+    return obj["mobile"];
   }
   if (currWidth < theme.breakpoints.desktop) {
-    return obj['tablet'];
+    return obj["tablet"];
   }
-  return obj['desktop'];
+  return obj["desktop"];
 };
 
 export default theme;

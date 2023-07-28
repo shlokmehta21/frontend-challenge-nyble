@@ -4,7 +4,7 @@
   "description": "Nyble take-home exercise.",
   "scripts": {
     "start": "yarn web:dev",
-    "web:dev": "webpack-dev-server --mode development --devtool inline-source-map --hot --display-error-details",
+    "web:dev": "webpack-dev-server --mode development  --devtool inline-source-map --hot --display-error-details",
     "gql:gen": "cd ./scripts/graphql_gen && yarn run gqlgen"
   },
   "author": "Fincentify inc. dba. Nyble",
@@ -39,7 +39,7 @@
     "style-loader": "^0.23.1",
     "text-transform-loader": "~2.0.0",
     "ts-node": "^10.5.0",
-    "typescript": "^4.2.4",
+    "typescript": "^5.1.6",
     "webpack": "^4.30.0",
     "webpack-cli": "~3.2.3",
     "webpack-dev-server": "^3.11.2"
@@ -90,7 +90,7 @@
     "launchdarkly-react-client-sdk": "^2.23.0",
     "lodash": "^4.17.21",
     "mini-css-extract-plugin": "^1.6.0",
-    "node-sass": "^4.11.0",
+    "node-sass": "^9.0.0",
     "path-to-regexp": "^6.2.0",
     "react-bootstrap": "^2.6.0",
     "react-chartjs-2": "^4.0.0",
